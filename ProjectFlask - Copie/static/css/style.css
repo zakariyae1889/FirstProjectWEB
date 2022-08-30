@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200&family=Lato:wght@300&display=swap');
+
+
+span{
+color:#ff3f34;
+font-family: 'Lato', sans-serif;
+font-size:20px;
+}
+.info{
+  text-align:center;
+  color:#341f97;
+}
+#clock{
+color:#3c40c6;
+padding:10px;
+border:1px solid;
+border-radius:5px;
+font-size:25px;
+}
+.loader-con{
+    display:block;
+}
+img{
+border:1px solid;
+border-radius:50px;
+}
+
+
+
+
+
+
+
+
+
+

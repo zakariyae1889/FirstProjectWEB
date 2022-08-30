@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}" >
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body >
+
+
+<center>
+        <div class="col-lg-6 col-md-8 mx-auto pt-5">
+        <img src="{{url_for('static',filename='image/zoro.png')}}" width="100" HEIGHT="100">
+            <BR>
+        <h1 class="fw-light text-success">Win With Zakariye Abbih</h1>
+        <h2 class="lead  text-primary">open registration after</h2>
+            <br>
+            <p id="clock"></p>
+
+        <h3 class="lead text-danger">Raffle to Win a Free Copy</h3>
+        <p>
+          <a href="#" class="btn btn-primary my-2" >Main call to action</a>
+
+        </p>
+      </div>
+    <ul class="list-group list-group-flush">
+  <li class="list-group-item">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum</li>
+  <li class="list-group-item">On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se</li>
+  <li class="list-group-item">Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une</li>
+  <li class="list-group-item">Plusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là, mais la majeure partie d'entre elles a été altérée par l'addition</li>
+
+</ul>
+</center>
+    <br>
+    <br>
+<div class="col-lg-6 col-md-8 mx-auto text-center">
+<form action="/PageHome" method="post" >
+
+    <h3 class="info">please enter your  information</h3>
+    <br>
+  <div class="mb-3">
+    <label for="email" class="form-label">FirstName:</label>
+
+      <input type="text" class="form-control" id="email" placeholder="Enter FirstName"  name="FirstName">
+      <div id="emailHelp" class="form-text mx-3 mt-1 error">
+          {% for category, message in get_flashed_messages(with_categories=true) %}
+          {%if category=='Name'%}
+          <span>{{message}}</span>
+           {%endif%}
+        {%endfor%}
+
+      </div>
+  </div>
+  <div class="mb-3">
+    <label for="pwd" class="form-label">LastName:</label>
+    <input type="text" class="form-control" id="pwd" placeholder="Enter LastName" name="LastName">
+    <div id="emailHelp" class="form-text mx-3 mt-1 error">
+        {% for category, message in get_flashed_messages(with_categories=true) %}
+        {%if category=='LastName'%}
+          <span>{{message}}</span>
+         {%endif%}
+        {%endfor%}
+
+    </div>
+  </div>
+
+    <div class="mb-3">
+    <label for="pwd" class="form-label">Email:</label>
+    <input type="Email" class="form-control" id="pwd" placeholder="Enter Email" name="Email">
+     <div id="emailHelp" class="form-text mx-3 mt-1 error">
+          {% for category, message in get_flashed_messages(with_categories=true) %}
+         {%if category=='Email'%}
+          <span>{{message}}</span>
+          {%endif%}
+        {%endfor%}
+     </div>
+
+  </div>
+
+  <button type="submit" class="btn btn-primary  w-100">send information</button>
+</form>
+</div>
+</div>
+
+<br>
+<br>
+<center>
+    <div class="loader-con">
+
+    <div id="loader">
+        <canvas id="circularLoader" width="200" height="200"></canvas>
+    </div>
+
+</div>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+<!-------------------------------------------->
+
+
+
+
+
+<center>
+
+
+
+
+
+
+    <!-- Button trigger modal -->
+<button type="button" id="Winner" class="btn btn-primary  w-50" >
+
+
+  Pick the Winner
+</button>
+    <br>
+    <br>
+    <br>
+
+<!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="modalLabel" style="color:#3742fa">The winner of the contest</h5>
+
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      </div>
+      <div class="modal-body">
+       {%for show_ in show%}
+        <h1 style="color:#2ed573" class="text-center display-5">  {{show_.1}},{{show_.2}}</h1>
+       {%endfor%}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+</center>
+
+
+<script src="{{url_for('static',filename='js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{url_for('static',filename='js/load.js')}}"></script>
+<script src="{{url_for('static',filename='js/script.js')}}"></script>
+
+</body>
+</html>
